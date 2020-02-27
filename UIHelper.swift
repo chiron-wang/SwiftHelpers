@@ -10,6 +10,17 @@ import Foundation
 import UIKit
 
 public class UIHelper: NSObject {
+    @objc static func createButton(title: String,target: AnyObject, selector: Selector) -> UIButton {
+        let button = UIButton()
+        button.backgroundColor = .lightGray
+        button.setTitle(title, for: .normal)
+        button.setTitleColor(.red, for: .normal)
+        button.titleLabel?.font = UIFont(name: "Helvetica Neue", size: 22.0)
+        button.addTarget(target, action: selector, for: .touchUpInside)
+        
+        return button
+    }
+    
     @objc static func createButton(title: String,target: AnyObject, selector: Selector, frame: CGRect) -> UIButton {
         let button = UIButton(frame: frame)
         button.backgroundColor = .lightGray
