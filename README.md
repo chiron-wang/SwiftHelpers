@@ -23,3 +23,11 @@ git rm -f Helpers
 git rm -f .gitmodules
 ```
 
+* 更新 submodule
+```
+// 全部更新
+git submodule foreach --recursive git pull origin master
+
+// 單一更新
+git pull
+```
